@@ -15,9 +15,8 @@ const Message = require("./Models/messages");
 // Routes
 const authRouter = require("./Routers/authRouter");
 const userRouter = require("./Routers/userRouter");
+const analysisRouter = require("./Routers/analysisRouter");
 const cronRouter = require("./Routers/cron");
-// const analysisRoutes = require("./routes/analysis");
-// const notificationRoutes = require("./routes/notification");
 
 // Init app
 const app = express();
@@ -54,9 +53,8 @@ app.use(
 // ROUTES
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/analyses", analysisRouter);
 app.use("/api/v1/cron", cronRouter);
-// app.use("/api/v1/analysis", analysisRoutes);
-// app.use("/api/v1/notifications", notificationRoutes);
 
 // SOCKET EVENTS
 io.on("connection", (socket) => {

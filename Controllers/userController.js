@@ -1,5 +1,7 @@
+const mongoose = require("mongoose")
 const User = require("../Models/user")
-const {uploadToCloudinary, uploadVideoToCloudinary, deleteFromCloudinary} = require("../Middlewares/cloudinary")
+const { generateTokens } = require("../Middlewares/jwt")
+const {uploadToCloudinary, deleteFromCloudinary} = require("../Middlewares/cloudinary")
 
 const getProfile = async (req, res) => {
   console.log(`[AUTH] Attempting to get profile for email: ${req.user?.email || "N/A"}`);
